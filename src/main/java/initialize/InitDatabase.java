@@ -7,7 +7,7 @@
     Also you need to update your classpath / resources, this is done in the pom.xml
  */
 
-package org.example;
+package initialize;
 
 import org.h2.tools.Server;
 
