@@ -12,5 +12,7 @@ module hust.soict.cybersec.cookhandbook {
     requires com.almasb.fxgl.all;
 
     opens hust.soict.cybersec.cookhandbook to javafx.fxml;
+    opens hust.soict.cybersec.cookhandbook.controller to javafx.fxml;
+
     exports hust.soict.cybersec.cookhandbook;
 }
