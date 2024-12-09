@@ -1,0 +1,71 @@
+/* Background */
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+/* Title Style */
+.title-label {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+/* Food News Label */
+.news-label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #e74c3c;
+}
+
+/* Field Labels */
+.field-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #34495e;
+}
+
+/* Text Fields */
+.text-field {
+    -fx-background-color: #ecf0f1;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 5px;
+    -fx-font-size: 14px;
+}
+
+/* Buttons */
+.primary-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 5px 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 2, 0, 0, 1);
+}
+
+.primary-button:hover {
+    -fx-background-color: #2980b9;
+}
+
+.secondary-button {
+    -fx-background-color: #95a5a6;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 5px 15px;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #7f8c8d;
+}
+
+/* Placeholder for TextFields */
+.text-field:focused {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #3498db;
+    -fx-border-width: 2px;
+}
