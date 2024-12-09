@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:controller="hust.soict.cybersec.cookhandbook.controller.LoginController" prefHeight="450.0" prefWidth="350.0" stylesheets="@../style/login.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="450.0" prefWidth="350.0" stylesheets="@../style/login.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hust.soict.cybersec.cookhandbook.controller.LoginController">
    <children>
 
       <!-- Page Title -->
@@ -22,7 +22,7 @@
 
       <!-- Buttons -->
       <Button fx:id="loginButton" layoutX="102.0" layoutY="220.0" onAction="#handleLogin" styleClass="primary-button" text="Login" />
-      <Button fx:id="registerButton" layoutX="190.0" layoutY="220.0" styleClass="secondary-button" text="Register" />
+      <Button fx:id="registerButton" layoutX="190.0" layoutY="220.0" onAction="#handleRegister" styleClass="secondary-button" text="Register" />
 
    </children>
 </AnchorPane>

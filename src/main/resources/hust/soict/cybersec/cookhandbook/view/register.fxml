@@ -16,6 +16,6 @@
         <Label layoutX="38.0" layoutY="190.0" prefHeight="39.0" prefWidth="85.0" styleClass="field-label" text="Confirm Password:" wrapText="true" />
         <PasswordField fx:id="confirmPasswordField" layoutX="144.0" layoutY="194.0" promptText="Confirm your password" styleClass="text-field" />
         <Button fx:id="registerButton" layoutX="102.0" layoutY="256.0" onAction="#handleRegister" styleClass="primary-button" text="Register" />
-        <Button fx:id="switchToLoginButton" layoutX="212.0" layoutY="256.0" styleClass="secondary-button" text="Login" />
+        <Button fx:id="switchToLoginButton" layoutX="212.0" layoutY="256.0" onAction="#handleLogin" styleClass="secondary-button" text="Login" />
     </children>
 </AnchorPane>
