@@ -22,13 +22,8 @@ public class InitDatabase {
             System.out.println("H2 Console started at http://localhost:8082");
 
             // Use a persistent file-based H2 database
-            Connection connection = DriverManager.getConnection("jdbc:h2:~/testDb;AUTO_SERVER=TRUE;INIT=RUNSCRIPT FROM 'classpath:recipe.sql'", "sa", "");
+            Connection connection = DriverManager.getConnection("jdbc:h2:~/testDb;AUTO_SERVER=TRUE;INIT=RUNSCRIPT FROM 'classpath:initial.sql'", "sa", "");
             System.out.println("Database connection is valid: " + connection.isValid(0));
-
-            // Assume there are 2 database
-            // // Initialize and connect to Database 2
-            // Connection connection2 = DriverManager.getConnection("jdbc:h2:~/testDb2;AUTO_SERVER=TRUE;INIT=RUNSCRIPT FROM 'classpath:users.sql'", "sa", "");
-            // System.out.println("Database 2 connection is valid: " + connection2.isValid(0));
 
             // Keep the application running until the user presses Enter
             System.out.println("Press Enter to exit...");

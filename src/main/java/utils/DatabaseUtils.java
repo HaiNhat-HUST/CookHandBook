@@ -17,6 +17,10 @@ public class DatabaseUtils {
         this.connection = DriverManager.getConnection(dbUrl, username, password);
     }
 
+    public Connection getConnection() {
+        return connection;
+    }
+
     private ResultSet executeQuery(String query, Object[] params) throws SQLException {
         PreparedStatement stmt = connection.prepareStatement(query);
 
