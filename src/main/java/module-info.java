@@ -10,6 +10,7 @@ module hust.soict.cybersec.cookhandbook {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires jdk.jconsole;
 
     opens hust.soict.cybersec.cookhandbook to javafx.fxml;
     opens hust.soict.cybersec.cookhandbook.controller to javafx.fxml;

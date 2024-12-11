@@ -11,7 +11,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         //load the login - register form
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("view/login.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("view/detailRecipe.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load());
 
