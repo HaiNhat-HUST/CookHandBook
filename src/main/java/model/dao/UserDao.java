@@ -18,7 +18,7 @@ public class UserDao {
 
         try {
             conn = AppDb.getConnection();
-            stmt = conn.prepareStatement("INSERT INTO users (email, username, password_hash, role) VALUES (?, ?, ?, 'USER')");
+            stmt = conn.prepareStatement("INSERT INTO users (email, username, password, role) VALUES (?, ?, ?, 'USER')");
             stmt.setString(1, user.getEmail());
             stmt.setString(2, user.getUsername());
             stmt.setString(3, user.getPassword());
@@ -36,7 +36,7 @@ public class UserDao {
 
         try {
             conn = AppDb.getConnection();
-            stmt = conn.prepareStatement("UPDATE users SET email = ?, username = ?, password_hash = ? WHERE id = ?");
+            stmt = conn.prepareStatement("UPDATE users SET email = ?, username = ?, password = ? WHERE id = ?");
             stmt.setString(1, user.getEmail());
             stmt.setString(2, user.getUsername());
             stmt.setString(3, user.getPassword());
@@ -69,7 +69,7 @@ public class UserDao {
 
         try {
             conn = AppDb.getConnection();
-            stmt = conn.prepareStatement("SELECT * FROM users WHERE username = ? AND password_hash = ?");
+            stmt = conn.prepareStatement("SELECT * FROM users WHERE username = ? AND password = ?");
             stmt.setString(1, username);
             stmt.setString(2, password);
             ResultSet rs = stmt.executeQuery();

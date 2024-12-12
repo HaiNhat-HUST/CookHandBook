@@ -89,4 +89,54 @@ public class RestaurantDao {
             AppDb.closeConnection();
         }
     }
+
+    public ArrayList<Restaurant> getAllAccepted() {
+        PreparedStatement stmt;
+        ArrayList<Restaurant> restaurants = new ArrayList<>();
+
+        try {
+            conn = AppDb.getConnection();
+            stmt = conn.prepareStatement("SELECT * FROM restaurants WHERE status='ACCEPTED'");
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                restaurants.add(new Restaurant(
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getString("address"),
+                        rs.getInt("owner_id"),
+                        rs.getString("phone_number")
+                ));
+            }
+            return restaurants;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            AppDb.closeConnection();
+        }
+    }
+
+    public ArrayList<Restaurant> getAllPending() {
+        PreparedStatement stmt;
+        ArrayList<Restaurant> restaurants = new ArrayList<>();
+
+        try {
+            conn = AppDb.getConnection();
+            stmt = conn.prepareStatement("SELECT * FROM restaurants WHERE status='PENDING'");
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                restaurants.add(new Restaurant(
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getString("address"),
+                        rs.getInt("owner_id"),
+                        rs.getString("phone_number")
+                ));
+            }
+            return restaurants;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            AppDb.closeConnection();
+        }
+    }
 }

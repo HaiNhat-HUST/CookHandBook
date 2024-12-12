@@ -3,6 +3,7 @@ package model.dao;
 import model.entity.Recipe;
 import utils.AppDb;
 
+import javax.crypto.spec.RC2ParameterSpec;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -77,6 +78,60 @@ public class RecipeDao {
             conn = AppDb.getConnection();
             stmt = conn.prepareStatement("SELECT * FROM recipes WHERE name LIKE ?");
             stmt.setString(1, "%" + name + "%");
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                recipes.add(new Recipe(
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getInt("author_id"),
+                        rs.getString("cuisine_type"),
+                        rs.getInt("time"),
+                        rs.getString("ingredients"),
+                        rs.getString("tutorial")
+                ));
+            }
+            return recipes;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            AppDb.closeConnection();
+        }
+    }
+
+    public ArrayList<Recipe> getAllAccepted() {
+        PreparedStatement stmt;
+        ArrayList<Recipe> recipes = new ArrayList<>();
+
+        try {
+            conn = AppDb.getConnection();
+            stmt = conn.prepareStatement("SELECT * FROM recipes WHERE status='Accepted'");
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                recipes.add(new Recipe(
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getInt("author_id"),
+                        rs.getString("cuisine_type"),
+                        rs.getInt("time"),
+                        rs.getString("ingredients"),
+                        rs.getString("tutorial")
+                ));
+            }
+            return recipes;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            AppDb.closeConnection();
+        }
+    }
+
+    public ArrayList<Recipe> getAllPending() {
+        PreparedStatement stmt;
+        ArrayList<Recipe> recipes = new ArrayList<>();
+
+        try {
+            conn = AppDb.getConnection();
+            stmt = conn.prepareStatement("SELECT * FROM recipes WHERE status='PENDING'");
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 recipes.add(new Recipe(
