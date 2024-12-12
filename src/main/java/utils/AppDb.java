@@ -1,14 +1,16 @@
 package utils;
 
+import org.h2.tools.Server;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class AppDb {
     private static Connection conn;
-    private static String url;
-    private static String user;
-    private static String password;
+    private static String url = "jdbc:h2:~/testDb";
+    private static String user = "sa";
+    private static String password = "";
 
     public static Connection getConnection() {
         try {

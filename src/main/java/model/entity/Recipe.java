@@ -1,5 +1,7 @@
 package model.entity;
 
+import java.util.ArrayList;
+
 public class Recipe {
     private int id;
     private String name;

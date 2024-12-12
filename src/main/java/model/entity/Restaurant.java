@@ -39,11 +39,11 @@ public class Restaurant {
         this.address = address;
     }
 
-    public int getOwner_id() {
+    public int getOwnerId() {
         return ownerId;
     }
 
-    public void setOwner_id(int owner_id) {
+    public void setOwnerId(int owner_id) {
         this.ownerId = owner_id;
     }
 

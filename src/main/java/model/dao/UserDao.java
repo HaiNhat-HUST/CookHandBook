@@ -1,4 +1,4 @@
-package model.dao.imp;
+package model.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,21 +8,20 @@ import java.sql.SQLException;
 import model.actor.Admin;
 import model.actor.RestaurantOwner;
 import model.actor.User;
-import model.dao.UserDAO;
 import utils.AppDb;
 
-public class UserDaoImp implements UserDAO {
+public class UserDao {
     private Connection conn;
 
-    @Override
     public void insert(User user) {
         PreparedStatement stmt;
 
         try {
             conn = AppDb.getConnection();
-            stmt = conn.prepareStatement("INSERT INTO users (username, password) VALUES (?, ?)");
-            stmt.setString(1, user.getUsername());
-            stmt.setString(2, user.getPassword());
+            stmt = conn.prepareStatement("INSERT INTO users (email, username, password_hash, role) VALUES (?, ?, ?, 'USER')");
+            stmt.setString(1, user.getEmail());
+            stmt.setString(2, user.getUsername());
+            stmt.setString(3, user.getPassword());
             stmt.execute();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -32,13 +31,12 @@ public class UserDaoImp implements UserDAO {
 
     }
 
-    @Override
     public void update(User user) {
         PreparedStatement stmt;
 
         try {
             conn = AppDb.getConnection();
-            stmt = conn.prepareStatement("UPDATE users SET email = ?, username = ?, password = ? WHERE id = ?");
+            stmt = conn.prepareStatement("UPDATE users SET email = ?, username = ?, password_hash = ? WHERE id = ?");
             stmt.setString(1, user.getEmail());
             stmt.setString(2, user.getUsername());
             stmt.setString(3, user.getPassword());
@@ -51,7 +49,6 @@ public class UserDaoImp implements UserDAO {
         }
     }
 
-    @Override
     public void deleteById(int id) {
         PreparedStatement stmt;
 
@@ -67,13 +64,12 @@ public class UserDaoImp implements UserDAO {
         }
     }
 
-    @Override
     public User findUser(String username, String password) {
         PreparedStatement stmt;
 
         try {
             conn = AppDb.getConnection();
-            stmt = conn.prepareStatement("SELECT * FROM users WHERE username = ? AND password = ?");
+            stmt = conn.prepareStatement("SELECT * FROM users WHERE username = ? AND password_hash = ?");
             stmt.setString(1, username);
             stmt.setString(2, password);
             ResultSet rs = stmt.executeQuery();

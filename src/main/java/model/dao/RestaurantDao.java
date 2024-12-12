@@ -1,6 +1,5 @@
-package model.dao.imp;
+package model.dao;
 
-import model.dao.RestaurantDAO;
 import model.entity.Restaurant;
 import utils.AppDb;
 
@@ -10,18 +9,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class RestaurantDaoImp implements RestaurantDAO {
+public class RestaurantDao {
     private Connection conn;
-    @Override
+
     public void insert(Restaurant restaurant) {
         PreparedStatement stmt;
 
         try {
             conn = AppDb.getConnection();
-            stmt = conn.prepareStatement("INSERT INTO restaurants VALUES (?,?,?,?)");
+            stmt = conn.prepareStatement("INSERT INTO restaurants (name, address, owner_id, phone_number) VALUES (?,?,?,?)");
             stmt.setString(1, restaurant.getName());
             stmt.setString(2, restaurant.getAddress());
-            stmt.setInt(3, restaurant.getOwner_id());
+            stmt.setInt(3, restaurant.getOwnerId());
             stmt.setString(4, restaurant.getPhoneNumber());
             stmt.executeUpdate();
         } catch (SQLException e) {
@@ -31,7 +30,6 @@ public class RestaurantDaoImp implements RestaurantDAO {
         }
     }
 
-    @Override
     public void update(Restaurant restaurant) {
         PreparedStatement stmt;
 
@@ -40,7 +38,7 @@ public class RestaurantDaoImp implements RestaurantDAO {
             stmt = conn.prepareStatement("UPDATE restaurants SET name = ?, address = ?, owner_id = ?, phone_number = ? WHERE id = ?");
             stmt.setString(1, restaurant.getName());
             stmt.setString(2, restaurant.getAddress());
-            stmt.setInt(3, restaurant.getOwner_id());
+            stmt.setInt(3, restaurant.getOwnerId());
             stmt.setString(4, restaurant.getPhoneNumber());
             stmt.setInt(5, restaurant.getId());
             stmt.executeUpdate();
@@ -51,7 +49,6 @@ public class RestaurantDaoImp implements RestaurantDAO {
         }
     }
 
-    @Override
     public void delete(int id) {
         PreparedStatement stmt;
 
@@ -67,7 +64,6 @@ public class RestaurantDaoImp implements RestaurantDAO {
         }
     }
 
-    @Override
     public ArrayList<Restaurant> findRestaurant(String name) {
         PreparedStatement stmt;
         ArrayList<Restaurant> restaurants = new ArrayList<>();

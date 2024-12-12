@@ -1,6 +1,5 @@
-package model.dao.imp;
+package model.dao;
 
-import model.dao.RecipeDAO;
 import model.entity.Recipe;
 import utils.AppDb;
 
@@ -10,17 +9,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class RecipeDaoImp implements RecipeDAO {
+public class RecipeDao {
 
     private Connection conn;
 
-    @Override
     public void insert(Recipe recipe) {
         PreparedStatement stmt;
 
         try {
             conn = AppDb.getConnection();
-            stmt = conn.prepareStatement("INSERT INTO recipe VALUES (?, ?, ?, ?, ?, ?)");
+            stmt = conn.prepareStatement("INSERT INTO recipes(name, author_id, cuisine_type, time, ingredients, tutorial) VALUES (?, ?, ?, ?, ?, ?)");
             stmt.setString(1, recipe.getName());
             stmt.setInt(2, recipe.getAuthorId());
             stmt.setString(3, recipe.getCuisineType());
@@ -35,7 +33,6 @@ public class RecipeDaoImp implements RecipeDAO {
         }
     }
 
-    @Override
     public void update(Recipe recipe) {
         PreparedStatement stmt;
 
@@ -57,7 +54,6 @@ public class RecipeDaoImp implements RecipeDAO {
         }
     }
 
-    @Override
     public void delete(int id) {
         PreparedStatement stmt;
 
@@ -73,7 +69,6 @@ public class RecipeDaoImp implements RecipeDAO {
         }
     }
 
-    @Override
     public ArrayList<Recipe> findRecipe(String name) {
         PreparedStatement stmt;
         ArrayList<Recipe> recipes = new ArrayList<>();

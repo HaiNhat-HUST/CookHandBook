@@ -1,16 +1,9 @@
-DROP TABLE IF EXISTS restaurants;
-DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS recipes;
-DROP TABLE IF EXISTS recipe_review;
-DROP TABLE IF EXISTS restaurant_review;
-DROP TABLE IF EXISTS favorite_recipe;
-DROP TABLE IF EXISTS favorite_restaurant;
 CREATE TABLE users (
                        id INT AUTO_INCREMENT PRIMARY KEY,
                        email VARCHAR(255) UNIQUE NOT NULL,
                        username VARCHAR(255) UNIQUE NOT NULL,
                        password_hash VARCHAR(255) NOT NULL,
-                        role VARCHAR(15) NOT NULL;
+                        role VARCHAR(15) NOT NULL
 );
 CREATE TABLE restaurants (
                              id INT AUTO_INCREMENT PRIMARY KEY,
@@ -49,16 +42,16 @@ CREATE TABLE recipe_review (
                         comment VARCHAR(255) NOT NULL ,
                         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                         FOREIGN KEY (recipe_id) REFERENCES recipes(id) ON DELETE CASCADE
-)
+);
 CREATE TABLE favorite_recipe (
                         user_id INT NOT NULL,
                         recipe_id INT NOT NULL,
                         FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
                         FOREIGN KEY (recipe_id) REFERENCES recipes(id) ON DELETE CASCADE
-)
+);
 CREATE TABLE favorite_restaurant (
                         user_id INT NOT NULL,
                         restaurant_id INT NOT NULL,
                         FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
                         FOREIGN KEY (restaurant_id) REFERENCES restaurants(id) ON DELETE CASCADE
-)
+);
