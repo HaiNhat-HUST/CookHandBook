@@ -34,12 +34,34 @@ public class LoginController {
 
     // action xử lí việc đăng nhập (sử dụng tiện ích từ db để thực hiện truy vấn từ cơ sở dữ liệu để xác thực người dùng
     @FXML
-    private void handleLogin() {
+    private void handleLogin(ActionEvent event) {
         String username = usernameField.getText();
         String password = passwordField.getText();
 
         // Xử lý logic đăng nhập tại đây
         System.out.println("Username: " + username + ", Password: " + password);
+
+        if(username.equals("admin") && password.equals("admin")){
+            //load the dashboard
+            System.out.println("right");
+            try {
+                // Load the FXML file
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/hust/soict/cybersec/cookhandbook/view/dashboard.fxml"));
+                Parent root = loader.load();
+
+                // Get the current stage
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                // Set the new scene
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+
+            } catch (IOException e) {
+                e.printStackTrace(); // Log the error for debugging
+                System.out.println("Error loading the FXML file. Check the file path or syntax.");
+            }
+        }
     }
 
     //switch to register
