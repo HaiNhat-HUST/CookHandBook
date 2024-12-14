@@ -1,0 +1,95 @@
+/* Sidebar Styling */
+.sidebar {
+    -fx-background-color: #2c3e50;
+    -fx-padding: 20;
+}
+
+.avatar {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0.5, 1, 1);
+    -fx-border-color: white;
+    -fx-border-width: 2;
+    -fx-border-radius: 50;
+    -fx-background-radius: 50;
+}
+
+.username {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ecf0f1;
+    -fx-alignment: center;
+}
+
+/* Sidebar Buttons */
+.sidebar-button {
+    -fx-background-color: #34495e;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-padding: 10 15;
+}
+
+.sidebar-button:hover {
+    -fx-background-color: #1abc9c;
+}
+
+.logout-button {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-padding: 10 15;
+}
+
+.logout-button:hover {
+    -fx-background-color: #c0392b;
+}
+
+/* Header Styling */
+.header {
+    -fx-background-color: #16a085;
+    -fx-padding: 10 20;
+}
+
+.quote-label {
+    -fx-font-size: 16px;
+    -fx-font-style: italic;
+    -fx-text-fill: white;
+}
+
+/* Newsfeed Section Styling */
+.newsfeed-section {
+    -fx-padding: 20;
+    -fx-background-color: #ecf0f1;
+}
+
+.newsfeed-header {
+    -fx-background-color: #bdc3c7;
+    -fx-padding: 10;
+    -fx-border-color: #7f8c8d;
+    -fx-border-width: 0 0 1 0;
+}
+
+.newsfeed-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.new-recipe-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+}
+
+.new-recipe-button:hover {
+    -fx-background-color: #2980b9;
+}
+
+/* Newsfeed Items Container */
+.newsfeed-container {
+    -fx-spacing: 10;
+}

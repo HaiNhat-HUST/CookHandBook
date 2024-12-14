@@ -1,0 +1,61 @@
+/* General Styling for the AnchorPane */
+AnchorPane {
+    -fx-background-color: #f9f9f9;
+    -fx-padding: 10;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+/* Styling for the Food Image */
+.food-image {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 2, 2);
+    -fx-border-color: #ddd;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+/* Styling for the Food Name */
+.food-name {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+
+/* Styling for the Author Label */
+.author-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #555;
+}
+
+/* Styling for the Tag Label */
+.tag-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #777;
+    -fx-font-style: italic;
+}
+
+/* Styling for the Short Description */
+.description-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #444;
+    -fx-wrap-text: true;
+}
+
+/* Styling for the Favorites Button */
+.fav-button {
+    -fx-background-color: #ff6f61;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20;
+    -fx-padding: 5 10;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 1, 1);
+}
+
+.fav-button:hover {
+    -fx-background-color: #ff5a4b;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 7, 0.5, 1, 1);
+}
