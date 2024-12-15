@@ -1,4 +1,4 @@
-package hust.soict.cybersec.cookhandbook.model;
+package hust.soict.cybersec.cookhandbook.model.entity;
 
 public class ItemPost {
     public String name;
