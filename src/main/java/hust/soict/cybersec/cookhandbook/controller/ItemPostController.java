@@ -1,6 +1,6 @@
 package hust.soict.cybersec.cookhandbook.controller;
 
-import hust.soict.cybersec.cookhandbook.model.Recipe;
+import hust.soict.cybersec.cookhandbook.model.entity.Recipe;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
@@ -22,9 +22,9 @@ public class ItemPostController {
 
 
     public void setPostData(Recipe recipe) {
-        author.setText(recipe.author);
-        name.setText(recipe.name);
-        tag.setText(recipe.tag);
-        shortdes.setText(recipe.description);
+//        author.setText(recipe.author);
+//        name.setText(recipe.name);
+//        tag.setText(recipe.tag);
+//        shortdes.setText(recipe.description);
     }
 }
