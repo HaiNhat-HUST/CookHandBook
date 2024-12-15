@@ -1,6 +1,8 @@
 package hust.soict.cybersec.cookhandbook.controller;
 
 
+import hust.soict.cybersec.cookhandbook.model.actor.User;
+import hust.soict.cybersec.cookhandbook.model.dao.UserDao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +15,7 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class LoginController {
 
@@ -35,15 +38,12 @@ public class LoginController {
     // action xử lí việc đăng nhập (sử dụng tiện ích từ db để thực hiện truy vấn từ cơ sở dữ liệu để xác thực người dùng
     @FXML
     private void handleLogin(ActionEvent event) {
+        UserDao userDao = new UserDao();
         String username = usernameField.getText();
         String password = passwordField.getText();
+        User resultUser = userDao.findUser(username, password);
 
-        // Xử lý logic đăng nhập tại đây
-        System.out.println("Username: " + username + ", Password: " + password);
-
-        if(username.equals("admin") && password.equals("admin")){
-            //load the dashboard
-            System.out.println("right");
+        if(resultUser != null){
             try {
                 // Load the FXML file
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/hust/soict/cybersec/cookhandbook/view/dashboard.fxml"));
@@ -67,7 +67,7 @@ public class LoginController {
     //switch to register
     @FXML
     private void handleRegister(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/hust/soict/cybersec/cookhandbook/view/register.fxml"));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/hust/soict/cybersec/cookhandbook/view/register.fxml")));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

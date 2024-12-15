@@ -22,9 +22,9 @@ public class ItemPostController {
 
 
     public void setPostData(Recipe recipe) {
-        author.setText(recipe.author);
-        name.setText(recipe.name);
-        tag.setText(recipe.tag);
-        shortdes.setText(recipe.description);
+//        author.setText(recipe.author);
+//        name.setText(recipe.name);
+//        tag.setText(recipe.tag);
+//        shortdes.setText(recipe.description);
     }
 }
