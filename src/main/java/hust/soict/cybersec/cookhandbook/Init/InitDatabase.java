@@ -13,7 +13,7 @@ public class InitDatabase {
             System.out.println("H2 Console started at http://localhost:8082");
 
             // Use a persistent file-based H2 database
-            Connection connection = DriverManager.getConnection("jdbc:h2:~/testDb;AUTO_SERVER=TRUE;INIT=RUNSCRIPT FROM 'classpath:init.sql'", "sa", "");
+            Connection connection = DriverManager.getConnection("jdbc:h2:~/testDb;AUTO_SERVER=TRUE;INIT=RUNSCRIPT FROM 'classpath:db/init.sql'", "sa", "");
             System.out.println("Database connection is valid: " + connection.isValid(0));
 
             // Keep the application running until the user presses Enter

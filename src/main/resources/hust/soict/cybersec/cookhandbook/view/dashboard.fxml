@@ -33,7 +33,7 @@
                         <Button prefWidth="175.0" styleClass="sidebar-button" text="My Favorite Recipes" />
                      </children>
                   </VBox>
-                  <Button layoutX="164.0" layoutY="630.0" prefHeight="51.0" prefWidth="86.0" styleClass="logout-button" text="Logout" />
+                  <Button layoutX="164.0" layoutY="630.0" onAction="#logout" prefHeight="51.0" prefWidth="86.0" styleClass="logout-button" text="Logout" />
                </children>
             </AnchorPane>
          </left>

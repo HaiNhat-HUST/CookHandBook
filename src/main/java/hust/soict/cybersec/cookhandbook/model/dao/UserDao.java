@@ -87,4 +87,23 @@ public class UserDao {
             AppDb.closeConnection();
         }
     }
+
+    public String findUserUsername(int id) {
+        PreparedStatement stmt;
+
+        try {
+            conn = AppDb.getConnection();
+            stmt = conn.prepareStatement("SELECT * FROM users WHERE id = ?");
+            stmt.setString(1, String.valueOf(id));
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                return rs.getString("username");
+            }
+            return null;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            AppDb.closeConnection();
+        }
+    }
 }

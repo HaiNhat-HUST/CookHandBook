@@ -2,21 +2,28 @@ package hust.soict.cybersec.cookhandbook.model.entity;
 
 public class Recipe {
     private int id;
+    private String description;
     private String name;
+    private String authorName;
     private int authorId;
     private String cuisineType;
     private int time;
     private String ingredients;
     private String tutorial;
 
-    public Recipe(int id, String name, int authorId, String cuisineType, int time, String ingredients, String tutorial) {
-        this.id = id;
+    public Recipe(String name, String authorName, String description, String cuisineType) {
         this.name = name;
-        this.authorId = authorId;
+        this.authorName = authorName;
+        this.description = description;
         this.cuisineType = cuisineType;
-        this.time = time;
-        this.ingredients = ingredients;
-        this.tutorial = tutorial;
+    }
+
+    public java.lang.String getDescription() {
+        return description;
+    }
+
+    public String getAuthorName() {
+        return authorName;
     }
 
     public int getId() {

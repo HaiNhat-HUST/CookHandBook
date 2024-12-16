@@ -9,7 +9,7 @@
 <AnchorPane prefHeight="180.0" prefWidth="720.0" stylesheets="@../style/itempost.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hust.soict.cybersec.cookhandbook.controller.ItemPostController">
    <children>
       <!-- Food Image -->
-      <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="10.0" layoutY="15.0" pickOnBounds="true" styleClass="food-image">
+      <ImageView fx:id="recipeImage" fitHeight="150.0" fitWidth="150.0" layoutX="10.0" layoutY="15.0" pickOnBounds="true" styleClass="food-image">
          <image>
             <Image url="@../image/macaron.jpg" />
          </image>
@@ -29,5 +29,6 @@
 
       <!-- Add to Favorite Button -->
       <Button layoutX="594.0" layoutY="16.0" mnemonicParsing="false" styleClass="fav-button" text="Add to Favorites" />
+      <Button fx:id="detailsButton" layoutX="628.0" layoutY="135.0" mnemonicParsing="false" onAction="#viewDetail" styleClass="fav-button" text="View Detail" />
    </children>
 </AnchorPane>

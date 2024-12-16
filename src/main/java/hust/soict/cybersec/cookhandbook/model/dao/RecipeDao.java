@@ -81,13 +81,10 @@ public class RecipeDao {
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 recipes.add(new Recipe(
-                        rs.getInt("id"),
                         rs.getString("name"),
-                        rs.getInt("author_id"),
-                        rs.getString("cuisine_type"),
-                        rs.getInt("time"),
-                        rs.getString("ingredients"),
-                        rs.getString("tutorial")
+                        rs.getString("authorName"),
+                        rs.getString("description"),
+                        rs.getString("cuisine_type")
                 ));
             }
             return recipes;
@@ -104,17 +101,14 @@ public class RecipeDao {
 
         try {
             conn = AppDb.getConnection();
-            stmt = conn.prepareStatement("SELECT * FROM recipes WHERE status='Accepted'");
+            stmt = conn.prepareStatement("SELECT * FROM recipes WHERE status='APPROVED'");
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 recipes.add(new Recipe(
-                        rs.getInt("id"),
                         rs.getString("name"),
-                        rs.getInt("author_id"),
-                        rs.getString("cuisine_type"),
-                        rs.getInt("time"),
-                        rs.getString("ingredients"),
-                        rs.getString("tutorial")
+                        rs.getString("authorName"),
+                        rs.getString("description"),
+                        rs.getString("cuisine_type")
                 ));
             }
             return recipes;
@@ -135,13 +129,10 @@ public class RecipeDao {
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 recipes.add(new Recipe(
-                        rs.getInt("id"),
                         rs.getString("name"),
-                        rs.getInt("author_id"),
-                        rs.getString("cuisine_type"),
-                        rs.getInt("time"),
-                        rs.getString("ingredients"),
-                        rs.getString("tutorial")
+                        rs.getString("authorName"),
+                        rs.getString("description"),
+                        rs.getString("cuisine_type")
                 ));
             }
             return recipes;
