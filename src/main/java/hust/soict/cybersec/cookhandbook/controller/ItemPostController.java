@@ -47,12 +47,21 @@ public class ItemPostController implements Initializable {
         this.mainApp = mainApp;
     }
 
-    public void setRecipe(Recipe recipe) {
+    public void setRecipe(Recipe recipe, Integer cnt) {
+        String path;
+        if (cnt < 6){
+            path = "file:/E:/CookHandBook/src/main/resources/hust/soict/cybersec/cookhandbook/image/" + cnt.toString() + ".jpg";
+        }
+        else{
+            path = "file:/E:/CookHandBook/src/main/resources/hust/soict/cybersec/cookhandbook/image/5.jpg";
+        }
+
         this.currentRecipe = recipe;
         this.author.setText(recipe.getAuthorName());
         this.name.setText(recipe.getName());
         this.shortdes.setText(recipe.getDescription());
         this.tag.setText(recipe.getCuisineType());
+        this.recipeImage.setImage(new Image(path));
     }
 
     @Override

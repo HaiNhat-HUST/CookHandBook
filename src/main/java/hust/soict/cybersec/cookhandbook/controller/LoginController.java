@@ -23,6 +23,7 @@ import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
 
+    public Button registerButton;
     private App mainApp;
 
     @FXML

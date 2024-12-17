@@ -11,11 +11,12 @@ public class Recipe {
     private String ingredients;
     private String tutorial;
 
-    public Recipe(String name, String authorName, String description, String cuisineType) {
+    public Recipe(String name, String authorName, String description, String cuisineType, String ingredients) {
         this.name = name;
         this.authorName = authorName;
         this.description = description;
         this.cuisineType = cuisineType;
+        this.ingredients = ingredients;
     }
 
     public java.lang.String getDescription() {

@@ -1,0 +1,59 @@
+/* Main Background */
+.main-pane {
+    -fx-background-color: linear-gradient(to bottom right, #f2f6f9, #dceef3);
+}
+
+/* Title Text */
+.title-text {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-fill: #2c3e50;
+}
+
+/* Labels */
+.label-header {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-fill: #34495e;
+}
+
+/* Buttons */
+.icon-button {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-background-radius: 15px;
+    -fx-padding: 5 15;
+}
+
+.icon-button:hover {
+    -fx-background-color: #2ecc71;
+    -fx-cursor: hand;
+}
+
+.favourite-button {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-background-radius: 15px;
+    -fx-padding: 5 15;
+}
+
+.favourite-button:hover {
+    -fx-background-color: #c0392b;
+    -fx-cursor: hand;
+}
+
+/* Text Areas and Fields */
+.text-field-styled, .text-area-styled {
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 5;
+    -fx-background-color: #ecf0f1;
+    -fx-font-size: 14px;
+}
+
+.text-area-styled {
+    -fx-effect: dropshadow(gaussian, lightgray, 5, 0.3, 0, 1);
+}

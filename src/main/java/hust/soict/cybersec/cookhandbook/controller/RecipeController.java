@@ -13,6 +13,7 @@ import java.io.IOException;
 
 public class RecipeController {
 
+    public TextArea commentTextArea;
     private App mainApp;
 
     @FXML
@@ -23,9 +24,6 @@ public class RecipeController {
 
     @FXML
     private TextField dishNameTf;
-
-    @FXML
-    private TextArea commenTextArea;
 
     @FXML
     private TextArea recipeTextArea;
@@ -53,6 +51,7 @@ public class RecipeController {
     public void updateInfo(Recipe recipe) {
         dishNameTf.setText(recipe.getName());
         descriptionTextArea.setText(recipe.getDescription());
-
+        recipeTextArea.setText(recipe.getIngredients());
+        commentTextArea.setText("• TapTap: Dumangonvccccc\n• Jason: Toichuabhanmonnaongonhonthenay\n• Lam: Toidatang10canvimonnay\n• WalterWhite: saymynameee");
     }
 }

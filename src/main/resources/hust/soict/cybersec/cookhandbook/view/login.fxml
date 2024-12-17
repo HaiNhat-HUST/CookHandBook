@@ -4,25 +4,38 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="450.0" prefWidth="350.0" stylesheets="@../style/login.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hust.soict.cybersec.cookhandbook.controller.LoginController">
+<AnchorPane prefHeight="500.0" prefWidth="383.0" stylesheets="@../style/login.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hust.soict.cybersec.cookhandbook.controller.LoginController">
    <children>
+      <!-- Background Image -->
+      <ImageView fitHeight="500.0" fitWidth="444.0" pickOnBounds="true" preserveRatio="false" styleClass="background-image" />
 
-      <!-- Page Title -->
-      <Label layoutX="55.0" layoutY="41.0" styleClass="title-label" text="Login to Cook Handbook" />
+      <!-- Content -->
+      <VBox alignment="CENTER" layoutX="50.0" layoutY="50.0" spacing="15.0">
+         <children>
+            <!-- Page Title -->
+            <Label styleClass="title-label" text="🍳 Welcome to Cook Handbook 🍲" />
 
-      <!-- Username Field -->
-      <Label layoutX="40.0" layoutY="100.0" styleClass="field-label" text="Username:" />
-      <TextField fx:id="usernameField" layoutX="120.0" layoutY="96.0" promptText="Enter your username" styleClass="text-field" />
+            <!-- Username -->
+            <VBox alignment="CENTER_LEFT" spacing="5.0">
+               <Label styleClass="field-label" text="Username:" />
+               <TextField fx:id="usernameField" promptText="Enter your username" styleClass="text-field" />
+            </VBox>
 
-      <!-- Password Field -->
-      <Label layoutX="40.0" layoutY="150.0" styleClass="field-label" text="Password:" />
-      <PasswordField fx:id="passwordField" layoutX="120.0" layoutY="146.0" promptText="Enter your password" styleClass="text-field" />
+            <!-- Password -->
+            <VBox alignment="CENTER_LEFT" spacing="5.0">
+               <Label styleClass="field-label" text="Password:" />
+               <PasswordField fx:id="passwordField" promptText="Enter your password" styleClass="text-field" />
+            </VBox>
 
-      <!-- Buttons -->
-      <Button fx:id="loginButton" layoutX="102.0" layoutY="220.0" onAction="#handleLogin" styleClass="primary-button" text="Login" />
-      <Button fx:id="registerButton" layoutX="190.0" layoutY="220.0" onAction="#handleRegister" styleClass="secondary-button" text="Register" />
-
+            <!-- Buttons -->
+            <VBox spacing="10.0" />
+         </children>
+      </VBox>
+      <Button fx:id="registerButton" layoutX="134.0" layoutY="327.0" onAction="#handleRegister" styleClass="secondary-button" text="Register" />
+      <Button fx:id="loginButton" layoutX="134.0" layoutY="274.0" onAction="#handleLogin" styleClass="primary-button" text="Login" />
    </children>
 </AnchorPane>

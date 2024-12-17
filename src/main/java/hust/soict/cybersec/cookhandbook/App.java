@@ -7,6 +7,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -26,6 +27,8 @@ public class App extends Application {
     public void start(Stage primaryStage) throws IOException {
 
         this.primaryStage = primaryStage;
+        primaryStage.getIcons().add(new Image("file:/E:/CookHandBook/src/main/resources/hust/soict/cybersec/cookhandbook/image/app-icon.jpg")); // Replace with your image path
+        primaryStage.setTitle("Cook Handbook - Login");
 
         // load login
         FXMLLoader loginLoader = new FXMLLoader(getClass().getResource("view/login.fxml"));

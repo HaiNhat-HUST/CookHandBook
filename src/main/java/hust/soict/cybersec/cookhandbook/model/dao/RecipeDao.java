@@ -84,7 +84,8 @@ public class RecipeDao {
                         rs.getString("name"),
                         rs.getString("authorName"),
                         rs.getString("description"),
-                        rs.getString("cuisine_type")
+                        rs.getString("cuisine_type"),
+                        rs.getString("ingredients")
                 ));
             }
             return recipes;
@@ -108,7 +109,8 @@ public class RecipeDao {
                         rs.getString("name"),
                         rs.getString("authorName"),
                         rs.getString("description"),
-                        rs.getString("cuisine_type")
+                        rs.getString("cuisine_type"),
+                        rs.getString("ingredients")
                 ));
             }
             return recipes;
@@ -132,7 +134,8 @@ public class RecipeDao {
                         rs.getString("name"),
                         rs.getString("authorName"),
                         rs.getString("description"),
-                        rs.getString("cuisine_type")
+                        rs.getString("cuisine_type"),
+                        rs.getString("ingredients")
                 ));
             }
             return recipes;

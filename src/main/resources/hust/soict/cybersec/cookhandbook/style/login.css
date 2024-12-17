@@ -1,71 +1,61 @@
-/* Background */
-.root {
-    -fx-font-family: "Segoe UI", sans-serif;
+/* Background Image */
+.background-image {
+    -fx-image: url("../image/background.jpg"); /* Replace with your food-themed background image */
+    -fx-opacity: 0.5; /* Slight transparency */
 }
 
-/* Title Style */
+/* Title Label */
 .title-label {
-    -fx-font-size: 20px;
+    -fx-font-size: 22px;
     -fx-font-weight: bold;
-    -fx-text-fill: #2c3e50;
-}
-
-/* Food News Label */
-.news-label {
-    -fx-font-size: 16px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #e74c3c;
+    -fx-text-fill: #2C3E50; /* Dark Blue */
+    -fx-effect: dropshadow(gaussian, #E67E22, 15, 0.2, 0, 0); /* Orange shadow */
 }
 
 /* Field Labels */
 .field-label {
     -fx-font-size: 14px;
-    -fx-text-fill: #34495e;
+    -fx-font-weight: bold;
+    -fx-text-fill: #34495E; /* Dark Grey */
 }
 
 /* Text Fields */
 .text-field {
-    -fx-background-color: #ecf0f1;
-    -fx-border-color: #bdc3c7;
-    -fx-border-radius: 4px;
-    -fx-background-radius: 4px;
-    -fx-padding: 5px;
+    -fx-pref-width: 200px;
+    -fx-pref-height: 30px;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #BDC3C7; /* Light Grey Border */
+    -fx-background-color: #ECF0F1; /* Light Grey Background */
     -fx-font-size: 14px;
 }
 
 /* Buttons */
 .primary-button {
-    -fx-background-color: #3498db;
+    -fx-pref-width: 200px;
+    -fx-pref-height: 35px;
+    -fx-background-color: #E67E22; /* Food Orange */
     -fx-text-fill: white;
-    -fx-font-size: 14px;
     -fx-font-weight: bold;
-    -fx-border-radius: 4px;
-    -fx-background-radius: 4px;
-    -fx-padding: 5px 15px;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 2, 0, 0, 1);
+    -fx-background-radius: 20;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, #D35400, 10, 0.5, 0, 0);
 }
 
 .primary-button:hover {
-    -fx-background-color: #2980b9;
+    -fx-background-color: #D35400; /* Darker Orange */
 }
 
 .secondary-button {
-    -fx-background-color: #95a5a6;
+    -fx-pref-width: 200px;
+    -fx-pref-height: 35px;
+    -fx-background-color: #2C3E50; /* Dark Blue */
     -fx-text-fill: white;
-    -fx-font-size: 14px;
     -fx-font-weight: bold;
-    -fx-border-radius: 4px;
-    -fx-background-radius: 4px;
-    -fx-padding: 5px 15px;
+    -fx-background-radius: 20;
+    -fx-cursor: hand;
 }
 
 .secondary-button:hover {
-    -fx-background-color: #7f8c8d;
-}
-
-/* Placeholder for TextFields */
-.text-field:focused {
-    -fx-background-color: #ffffff;
-    -fx-border-color: #3498db;
-    -fx-border-width: 2px;
+    -fx-background-color: #1A242F; /* Darker Blue */
 }
